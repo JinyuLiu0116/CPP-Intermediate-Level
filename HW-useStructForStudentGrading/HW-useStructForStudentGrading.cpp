@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+const int SIZE = 10;
 
 struct Grade {
 	string firstName;
@@ -20,10 +21,27 @@ void setData(Grade& student);//calculate user data.
 void display(Grade& student);//display student's information.
 int main()
 {
-	Grade student1;
-	getInfor(student1);
-	setData(student1);
-	display(student1);
+	Grade student[SIZE];
+	int i=0;
+	bool check;
+	char yesOrNo;
+	do{
+		getInfor(student[i]);
+		setData(student[i]);
+		display(student[i]);
+		cout<<"Would you like try again for another student? (y/n): ";
+		cin>>yesOrNo;
+		switch(yesOrN)
+		{
+		case 'Y':
+		case 'y': check = true; i++; break;
+		case 'N':
+		case 'n': check = false; break;
+		default:cout << "Invalid input.";
+		}
+	}while(check);
+	cout << '\n';
+	cout << "Thank you for using.\n";
 
 
 }
