@@ -6,8 +6,6 @@ const int SIZE = 10;
 struct Grade {
 	string firstName;
 	string lastNmae;
-	//constant value for Max scors, I don't want them to be changed.
-	const double qMax = 10, mfMax = 100, totalMax = 220;
 	double quiz1,quiz2;
 	double midtern, final;
 	double aveQ1, aveQ2, aveMid, aveF;
@@ -120,10 +118,10 @@ void display(Grade& student)
 	cout << "Here is the results for " << student.firstName << " " << student.lastNmae << ".\n";
 	cout << '\n' << '\n';
 	cout << "        TEST        YOUR SCORE        MAX SCORE        AVERAGE SCORE\n";
-	cout << "      Quiz 1                " << student.quiz1 << "                " << student.qMax << "                 " << student.aveQ1 << "%" << endl;
-	cout << "      Quiz 2                " << student.quiz2 << "                " << student.qMax << "                 " << student.aveQ2 << "%" << endl;
-	cout << "     Midterm               " << student.midtern << "                " << student.mfMax << "                " << student.aveMid << "%" << endl;
-	cout << "       Final               " << student.final << "                " << student.mfMax << "                  " << student.aveF << "%" << endl;
+	cout << "      Quiz 1                " << student.quiz1 << "                " << " 10 " << "                 " << student.aveQ1 << "%" << endl;
+	cout << "      Quiz 2                " << student.quiz2 << "                " << " 10 " << "                 " << student.aveQ2 << "%" << endl;
+	cout << "     Midterm               " << student.midtern << "                " << " 100 " << "                " << student.aveMid << "%" << endl;
+	cout << "       Final               " << student.final << "                " << " 100 " << "                  " << student.aveF << "%" << endl;
 	cout << "------------------------------------------------------------------------------\n";
 	cout << "       TOTAL               " << student.total << "                " << student.totalMax << "                " << student.average << "%" << endl;
 	cout << "\n";
