@@ -66,16 +66,8 @@ int MaxMin::getMin()
 }
 void MaxMin::setter(int a, int b)
 {
-	if (a > b)
-	{
-		Max = a;
-		Min = b;
-	}
-	else
-	{
-		Max = b;
-		Min = a;
-	}
+	Max = ( a > b )	? a : b;
+	Max = ( a < b )	? a : b;
 }
 int MaxMin::add(int a)
 {
