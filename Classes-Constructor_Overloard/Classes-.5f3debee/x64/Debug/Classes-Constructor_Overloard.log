@@ -1,0 +1,5 @@
+﻿  Classes-Constructor_Overloard.cpp
+D:\Visual Studo project\Classes-Constructor_Overloard\Classes-Constructor_Overloard.cpp(38,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Visual Studo project\Classes-Constructor_Overloard\Classes-Constructor_Overloard.cpp(150,1): warning C4715: 'Practice::checkMin': not all control paths return a value
+D:\Visual Studo project\Classes-Constructor_Overloard\Classes-Constructor_Overloard.cpp(138,1): warning C4715: 'Practice::checkMax': not all control paths return a value
+  Classes-Constructor_Overloard.vcxproj -> D:\Visual Studo project\Classes-Constructor_Overloard\x64\Debug\Classes-Constructor_Overloard.exe
