@@ -19,4 +19,5 @@ int main()
 		cout << pArray[index] << " ";
 	}
 	delete[]pArray;
+	pArray = NULL;
 }
