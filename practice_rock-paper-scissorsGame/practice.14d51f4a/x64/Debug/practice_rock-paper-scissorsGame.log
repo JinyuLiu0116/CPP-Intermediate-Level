@@ -1,0 +1,4 @@
+﻿  practice_rock-paper-scissorsGame.cpp
+D:\C++\practice_rock-paper-scissorsGame\practice_rock-paper-scissorsGame.cpp(61,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\C++\practice_rock-paper-scissorsGame\practice_rock-paper-scissorsGame.cpp(72,1): warning C4715: 'getComputerChoice': not all control paths return a value
+  practice_rock-paper-scissorsGame.vcxproj -> D:\C++\practice_rock-paper-scissorsGame\x64\Debug\practice_rock-paper-scissorsGame.exe
