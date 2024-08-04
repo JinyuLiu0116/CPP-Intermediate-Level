@@ -1,3 +1,0 @@
-﻿  OOP_pattern.cpp
-D:\C++\OOP_pattern\OOP_pattern.cpp(27,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  OOP_pattern.vcxproj -> D:\C++\OOP_pattern\x64\Debug\OOP_pattern.exe
