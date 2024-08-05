@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <sstream>
 using namespace std;
 
 class Position {
@@ -18,7 +19,7 @@ public:
 	void setType(string);
 	void setShares(int);
 	void setPrice(double);
-	void display();
+	string toString();
 };
 class Broker {
 	list<Position> holdings;
@@ -116,6 +117,8 @@ void Position::setShares(int shares) {
 void Position::setPrice(double price) {
 	this->Price = price;
 }
-void Position::display() {
-	cout << "(Ticker: " << this->getTicker() << ", type: " << this->getType() << ", shares: " << this->getShares() << ", price: " << this->getPrice() << ")\n";
+string Position::toString() {
+	stringstream ss;
+	ss<<"Ticker: "<<Ticker<<",Type: "<< Type<<",Shares: "<< Shares<<",Price: "<<Price<<endl;
+	return ss.str();
 }
