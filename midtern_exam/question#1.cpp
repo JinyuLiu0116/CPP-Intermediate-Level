@@ -4,9 +4,9 @@
 using namespace std;
 //Only display the following county BRONX and QUEENS of the Cumulative Number of
 //Positives from 03 / 01 / 2020 to 07 / 28 / 2023.
-//• After you have created the program to simplify the information it should be displayed in
+//â€¢ After you have created the program to simplify the information it should be displayed in
 //the console output.
-//• The Output should be reflected in three columns.
+//â€¢ The Output should be reflected in three columns.
 //(County | Positive Covid Test | Date Range)
 
 
@@ -35,13 +35,13 @@ int main() {
 				start_date_Queens = date;
 			if (country == "Bronx") {
 				endB = date;
-				int num = stoi(CNOP);
+				int num = stod(CNOP);
 				count_Bronx += num;
 				
 			}
 			if (country == "Queens") {
 				endQ = date;
-				int num = stoi(CNOP);
+				int num = stod(CNOP);
 				count_Queens += num;
 			}
 		}
