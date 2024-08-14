@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-int CountSyllables(const string& word);
+int CountSyllables(string& word);
 int main() {
 	string word;
 	cout << "Enter a world with syllables separated by dashes(-): ";
@@ -12,11 +12,13 @@ int main() {
 	cout << "The word: " << word << " has " << numOfSylla << " syllables." << endl;
 
 }
-int CountSyllables(const string& word) {
+int CountSyllables(string& word) {
 	int count=1;
-	for (char it : word) {
-		if (it == '-')
+	for (auto it = word.begin();it!=word.end();it++) {
+		if (*it == '-'){
+			word.erase(it);
 			count++;
+		}
 	}
 	return count;
 }
