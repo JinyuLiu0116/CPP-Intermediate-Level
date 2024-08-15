@@ -20,6 +20,18 @@ public:
 	void setDrawers(int d);
 	void setLegs(int l);
 };
+class Desk :public Funiture {
+	double Length, Width;
+	Desk() :Funiture("N/A", 28, 1, 1, 4) { this->Length = 24; this->Width = 16; }
+	Desk(string wood, double height, int years, int drawers, int legsg);
+	void setDrawers(int d);
+	void setHeight(double h);
+	void setLength(int l);
+	void setWidth(int w);
+	void setLegs(int l);
+	int getLength() { return this->Length; }
+	int getWidth() { return this->Width; }
+};
 
 int main() {
 
