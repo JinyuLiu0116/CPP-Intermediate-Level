@@ -4,8 +4,10 @@ using namespace std;
 
 class Funiture {
 	string Wood;
+	int Years;
+protected:
 	double Height;
-	int Years, Drawers, Legs;
+	int Drawers, Legs;
 public:
 	Funiture() : Wood("N/A"), Height(0.0), Years(1), Drawers(0), Legs(0){}
 	Funiture(string wood, double height, int years, int drawers, int legs);
@@ -15,18 +17,18 @@ public:
 	int getDrawers() { return this->Drawers; }
 	int getLegs() { return this->Legs; }
 	void setWood(string w) { this->Wood = w; }
-	void setHeight(double h);
+	virtual void setHeight(double h);
+	virtual void setDrawers(int d);
+	virtual void setLegs(int l);
 	void setYears(int y);
-	void setDrawers(int d);
-	void setLegs(int l);
 };
 class Desk :public Funiture {
 	double Length, Width;
 	Desk() :Funiture("N/A", 28, 1, 1, 4) { this->Length = 24; this->Width = 16; }
 	Desk(string wood, double height, int years, int drawers, int legs, double length, double width);
-	void setDrawers(int d);
-	void setHeight(double h);
-	void setLength(int l);
+	void setDrawers(int d) override=0;
+	void setHeight(double h) override=0;
+	void setLength(int l) override=0;
 	void setWidth(int w);
 	void setLegs(int l);
 	int getLength() { return this->Length; }
