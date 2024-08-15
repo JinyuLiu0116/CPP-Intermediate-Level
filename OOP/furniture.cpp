@@ -23,7 +23,7 @@ public:
 class Desk :public Funiture {
 	double Length, Width;
 	Desk() :Funiture("N/A", 28, 1, 1, 4) { this->Length = 24; this->Width = 16; }
-	Desk(string wood, double height, int years, int drawers, int legsg);
+	Desk(string wood, double height, int years, int drawers, int legs, double length, double width);
 	void setDrawers(int d);
 	void setHeight(double h);
 	void setLength(int l);
@@ -36,6 +36,55 @@ class Desk :public Funiture {
 int main() {
 
 
+}
+Desk::Desk(string wood, double height, int years, int drawers, int legs, double length, double width) {
+	this->setWood(wood);
+	this->setHeight(height);
+	this->setYears(years);
+	this->setDrawers(drawers);
+	this->setLegs(legs);
+	this->setLength(length);
+	this->setWidth(width);
+}
+void Desk::setDrawers(int d) {
+	if (d < 1) {
+		throw invalid_argument("A desk must has at less one drawers!");
+	}
+	else {
+		this->Drawers = d;
+	}
+}
+void Desk::setHeight(double h) {
+	if (h < 28||h>32) {
+		throw invalid_argument("Height only between 28 and 32 inches!");
+	}
+	else {
+		this->Height = h;
+	}
+}
+void Desk::setLength(int l) {
+	if (l < 24 || l>60) {
+		throw invalid_argument("Length can only between 24 and 60 inches!");
+	}
+	else {
+		this->Length = l;
+	}
+}
+void Desk::setWidth(int w) {
+	if (w < 16 || w>30) {
+		throw invalid_argument("Width can only between 28 and 32 inches!");
+	}
+	else {
+		this->Width = w;
+	}
+}
+void Desk::setLegs(int l) {
+	if (l!=4) {
+		throw invalid_argument("Desks can only have four legs!");
+	}
+	else {
+		this->Legs = l;
+	}
 }
 Funiture::Funiture(string wood, double height, int years, int drawers, int legs) {
 	this->setWood(wood);
