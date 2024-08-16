@@ -23,7 +23,9 @@ public:
 	virtual void setLegs(int l);
 	void setYears(int y);
 	string toString();
+	bool operator==(const Funiture& f);
 	vitrual Funiture resize(double factor)=0;
+	
 };
 class Desk :public Funiture {
 	double Length, Width;
@@ -38,6 +40,7 @@ public:
 	int getLength() { return this->Length; }
 	int getWidth() { return this->Width; }
 	string toString();
+	bool operator==(const Desk& d);
 	Funiture resize(double factor) override =0;
 };
 
@@ -53,6 +56,19 @@ Desk::Desk(string wood, double height, int years, int drawers, int legs, double 
 	this->setLegs(legs);
 	this->setLength(length);
 	this->setWidth(width);
+}
+bool Desk::operator==(const Desk& d){
+	return Furniture::operator==(d)&&
+		this->getLength()==d.getLength()&&
+		this->getWidth()==d.getWidth();
+}
+string Desk::toString(){
+	stringstream ss;
+	ss<<Funiture::toString()
+		<<" Desk (Length: " << this->getLength()
+		<<", Width: " << this->getWidth()
+		<<")"<<endl;
+	return ss.str();
 }
 Funiture Desk::resize(double factor){
 	Funiture* f=new Desk(this->getWood(), this->getHeight()* factor, this->getYears(), this->getDrawers(),
@@ -99,14 +115,6 @@ void Desk::setLegs(int l) {
 		this->Legs = l;
 	}
 }
-string Desk::toString(){
-	stringstream ss;
-	ss<<Funiture::toString()
-		<<" Desk (Length: " << this->getLength()
-		<<", Width: " << this->getWidth()
-		<<")"<<endl;
-	return ss.str();
-}
 Funiture::Funiture(string wood, double height, int years, int drawers, int legs) {
 	this->setWood(wood);
 	this->setHeight(height);
@@ -123,6 +131,13 @@ string Funiture::toString(){
 		<< ", Legs: "<< this->getLegs() << ")"<<endl;
 	
 	return ss.str();
+}
+bool Funiture::operator==(const Funiture& f){
+	return this->getWood()==f.getWood()&&
+		this->getYears()==f.getYears()&&
+		this->getHeight()==f.getHeight()&&
+		this->getDrawers()==f.getDrawers()&&
+		this->getLegs()==f.getLegs();
 }
 void Funiture::setHeight(double h) {
 	if (h <= 0) {
