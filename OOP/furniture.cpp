@@ -42,7 +42,7 @@ public:
 };
 
 int main() {
-
+	Funiture* f1=new Desk();
 
 }
 Desk::Desk(string wood, double height, int years, int drawers, int legs, double length, double width) {
