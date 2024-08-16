@@ -54,6 +54,11 @@ Desk::Desk(string wood, double height, int years, int drawers, int legs, double 
 	this->setLength(length);
 	this->setWidth(width);
 }
+Funiture Desk::resize(double factor){
+	Funiture* f=new Desk(this->getWood(), this->getHeight()* factor, this->getYears(), this->getDrawers(),
+		this->getLegs(), this->getLength()* factor, this->getWidth()* factor);
+	return f;
+}
 void Desk::setDrawers(int d) {
 	if (d < 1) {
 		throw invalid_argument("A desk must has at less one drawers!");
