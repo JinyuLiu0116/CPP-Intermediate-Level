@@ -23,6 +23,7 @@ public:
 	virtual void setLegs(int l);
 	void setYears(int y);
 	string toString();
+	vitrual Funiture resize(double factor)=0;
 };
 class Desk :public Funiture {
 	double Length, Width;
@@ -37,6 +38,7 @@ public:
 	int getLength() { return this->Length; }
 	int getWidth() { return this->Width; }
 	string toString();
+	Funiture resize(double factor) override =0;
 };
 
 int main() {
