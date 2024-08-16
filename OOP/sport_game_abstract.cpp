@@ -39,10 +39,10 @@ public:
 		:Game(teamA, teamB, MaxP, MaxS) {
 		this->referee = referee;
 	}
-	void setScoreA(int a) override;
-	void setScoreB(int b) override;
-	void setSubA(int a) override;
-	void setSubB(int b) override;
+	void setScoreA(int a) override=0;
+	void setScoreB(int b) override=0;
+	void setSubA(int a) override=0;
+	void setSubB(int b) override=0;
 };
 /*
 
