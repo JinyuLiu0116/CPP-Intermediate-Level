@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include <string>
+#include <sstream>
 using namespace std;
 
 class Funiture {
@@ -21,6 +22,7 @@ public:
 	virtual void setDrawers(int d);
 	virtual void setLegs(int l);
 	void setYears(int y);
+	string toString();
 };
 class Desk :public Funiture {
 	double Length, Width;
@@ -94,6 +96,16 @@ Funiture::Funiture(string wood, double height, int years, int drawers, int legs)
 	this->setYears(years);
 	this->setDrawers(drawers);
 	this->setLegs(legs);
+}
+string Funiture::toString(){
+	stringstream ss;
+	ss<<"Funiture:(Wood: " << this->getWood()
+		<< ", Years: " << this->getYears()
+		<< ", Height: "<< this->getHeight()
+		<< ", Drawers: "<< this->getDrawers()
+		<< ", Legs: "<< this->getLegs() << ")"<<endl;
+	
+	return ss.str();
 }
 void Funiture::setHeight(double h) {
 	if (h <= 0) {
