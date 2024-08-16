@@ -26,6 +26,7 @@ public:
 };
 class Desk :public Funiture {
 	double Length, Width;
+public:
 	Desk() :Funiture("N/A", 28, 1, 1, 4) { this->Length = 24; this->Width = 16; }
 	Desk(string wood, double height, int years, int drawers, int legs, double length, double width);
 	void setDrawers(int d) override=0;
