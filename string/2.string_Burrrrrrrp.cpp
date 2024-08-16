@@ -7,7 +7,7 @@ int main() {
   int numberOfR;
   cout << "We have a word: Burp.\nPlease enter a number to detement how many 'r' you want:";
   cin >> numberOfR;
-  iwhile (numberOfR < 1) {
+  while (numberOfR < 1) {
     cout<<"The word Brup has at less one 'r'!\nPlease enter a number again:";
     cin>>numberOfR;
   }
