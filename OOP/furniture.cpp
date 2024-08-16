@@ -35,6 +35,7 @@ class Desk :public Funiture {
 	void setLegs(int l);
 	int getLength() { return this->Length; }
 	int getWidth() { return this->Width; }
+	string toString();
 };
 
 int main() {
@@ -89,6 +90,14 @@ void Desk::setLegs(int l) {
 	else {
 		this->Legs = l;
 	}
+}
+string Desk::toString(){
+	stringstream ss;
+	ss<<Funiture::toString()
+		<<" Desk (Length: " << this->getLength()
+		<<", Width: " << this->getWidth()
+		<<")"<<endl;
+	return ss.str();
 }
 Funiture::Funiture(string wood, double height, int years, int drawers, int legs) {
 	this->setWood(wood);
