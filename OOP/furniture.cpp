@@ -12,6 +12,7 @@ protected:
 public:
 	Funiture() : Wood("N/A"), Height(0.0), Years(1), Drawers(0), Legs(0){}
 	Funiture(string wood, double height, int years, int drawers, int legs);
+	Funiture(const Funiture& f);
 	string getWood() { return this->Wood; }
 	double getHight() { return this->Height; }
 	int getYears() { return this->Years; }
@@ -121,6 +122,13 @@ Funiture::Funiture(string wood, double height, int years, int drawers, int legs)
 	this->setYears(years);
 	this->setDrawers(drawers);
 	this->setLegs(legs);
+}
+Funiture::Funiture(const Funiture& f){
+	this->setWood(f.getWood());
+	this->setYears(f.getYears());
+	this->setHeight(f.getHeight());
+	this->setDrawers(f.getDrawers());
+	this->setLegs(f.getLegs());
 }
 string Funiture::toString(){
 	stringstream ss;
