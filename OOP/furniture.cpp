@@ -46,7 +46,13 @@ public:
 };
 
 int main() {
-	Funiture* f1=new Desk();
+	try{
+		Funiture* f1=new Desk();
+
+		
+	}catch(const invalid_argument& e){
+		cerr<<"Exception: "<<e.what()<<endl;
+	}
 
 }
 Desk::Desk(string wood, double height, int years, int drawers, int legs, double length, double width) {
