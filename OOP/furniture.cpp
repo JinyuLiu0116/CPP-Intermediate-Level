@@ -13,11 +13,11 @@ public:
 	Funiture() : Wood("N/A"), Height(0.0), Years(1), Drawers(0), Legs(0){}
 	Funiture(string wood, double height, int years, int drawers, int legs);
 	Funiture(const Funiture& f);
-	string getWood() { return this->Wood; }
-	double getHight() { return this->Height; }
-	int getYears() { return this->Years; }
-	int getDrawers() { return this->Drawers; }
-	int getLegs() { return this->Legs; }
+	string getWood() const { return this->Wood; }
+	double getHight() const { return this->Height; }
+	int getYears() const { return this->Years; }
+	int getDrawers() const { return this->Drawers; }
+	int getLegs() const { return this->Legs; }
 	void setWood(string w) { this->Wood = w; }
 	virtual void setHeight(double h);
 	virtual void setDrawers(int d);
@@ -38,8 +38,8 @@ public:
 	void setLength(int l) override=0;
 	void setWidth(int w);
 	void setLegs(int l);
-	int getLength() { return this->Length; }
-	int getWidth() { return this->Width; }
+	int getLength() const { return this->Length; }
+	int getWidth() const { return this->Width; }
 	string toString();
 	bool operator==(const Desk& d);
 	Funiture resize(double factor) override =0;
