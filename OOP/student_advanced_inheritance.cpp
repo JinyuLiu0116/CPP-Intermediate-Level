@@ -63,6 +63,7 @@ int main() {
 		for (int i = 0; i < 5; i++) {
 			student[i]->student_infor();
 			student[i]->study();
+			cout<<'\n';
 		}
 
 		for (int i = 0; i < 5; i++) {
