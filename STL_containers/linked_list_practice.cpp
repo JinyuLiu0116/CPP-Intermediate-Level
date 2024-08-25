@@ -27,4 +27,8 @@ int main() {
 	third->Next = NULL;
 
 	printList(head);
+
+	delete head;
+	delete second;
+	delete third;
 }
