@@ -1,3 +1,0 @@
-﻿  mult_dynamic_arrays.cpp
-D:\C++\mult_dynamic_arrays\mult_dynamic_arrays.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  mult_dynamic_arrays.vcxproj -> D:\C++\mult_dynamic_arrays\x64\Debug\mult_dynamic_arrays.exe
