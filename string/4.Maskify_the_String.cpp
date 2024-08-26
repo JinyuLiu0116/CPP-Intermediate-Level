@@ -5,15 +5,13 @@ using namespace std;
 string maskify(const string& card);
 int main() {
 	string credit_card;
-	cout << "Please enter your cridit card number: ";
-	getline(cin, credit_card);
-	cin.ignore();
-	while(credit_card.empty()){
-		cout<<"Credit card number cannot be empty\n";
-		cout<<"Please enter your cridit card number: ";
+	do{
+		cout << "Please enter your cridit card number: ";
 		getline(cin, credit_card);
 		cin.ignore();
-	}
+		if(credit_card.empty())
+			cout<<"Credit card number cannot be empty.\n";
+	}while(credit_card.empty());
 	string card_number=maskify(credit_card);
 	cout << "Your card number is:" << card_number << endl;
 }
