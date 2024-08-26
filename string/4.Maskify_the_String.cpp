@@ -7,8 +7,8 @@ int main() {
 	string credit_card;
 	do{
 		cout << "Please enter your cridit card number: ";
-		getline(cin, credit_card);
 		cin.ignore();
+		getline(cin, credit_card);
 		if(credit_card.empty())
 			cout<<"Credit card number cannot be empty.\n";
 	}while(credit_card.empty());
