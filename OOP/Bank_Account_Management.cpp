@@ -14,8 +14,8 @@ public:
 	void setAccountNumber(int number);
 	void setAccountHolderName(string holderName);
 	void setBalance(double balance);
-	virtual void deposit(double amount)=0;
-	virtual void withdraw(double amount)=0;
+	void deposit(double amount);
+	void withdraw(double amount);
 	virtual string displayAccountInfo()=0;
 };
 class SavingAccount:public BankAccount {
@@ -28,8 +28,6 @@ public:
 	}
 	double getInterestRate() const { return this->interestRate; }
 	void setInterestRate(double rate);
-	virtual void deposit(double amount) override = 0;
-	virtual void withdraw(double amount) override = 0;
 	virtual string displayAccountInfo() override = 0;
 };
 int main() {
@@ -46,6 +44,12 @@ BankAccount::BankAccount(int number, string holderName, double balance) {
 	this->setAccountNumber(number);
 	this->setAccountHolderName(holderName);
 	this->setBalance(balance);
+}
+void BankAccount::deposit(double amount){
+	
+}
+void BankAccount::withdraw(double amount){
+	
 }
 void BankAccount::setAccountNumber(int number) {
 	if (number <= 0)
