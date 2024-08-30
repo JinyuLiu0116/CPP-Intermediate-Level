@@ -16,7 +16,7 @@ public:
 	void setBalance(double balance);
 	void deposit(double amount);
 	void withdraw(double amount);
-	virtual string displayAccountInfo()=0;
+	virtual string displayAccountInfo() = 0;
 };
 class SavingAccount:public BankAccount {
 	double interestRate;
@@ -46,9 +46,16 @@ BankAccount::BankAccount(int number, string holderName, double balance) {
 	this->setBalance(balance);
 }
 void BankAccount::deposit(double amount){
-	
+	if(amount < 0)
+		throw invalid_argument("Cannot deposit negative number of money!");
+	else
+		this->setBalance(this->getBalance() + amount);
 }
 void BankAccount::withdraw(double amount){
+	if(amount >= 0 && this->getBalance() < amount)
+		throw invalid_argumen("You don't have enough money!");
+	else
+		this-setBalance(this->getBalance() - amount);
 	
 }
 void BankAccount::setAccountNumber(int number) {
