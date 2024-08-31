@@ -64,8 +64,10 @@ void setAccount(int& num, string& name, double& balance, double& rate){
 	try{
 		cout<<"Please enter your first name:";
 		cin>>first;
+		checkName(first);
 		cout<<"Please enter your last name:";
 		cin>>last;
+		checkName(last);
 	}catch(const invalid_argumen& e){
 		cerr<<"Exception:"<<e.what()<<endl;
 	}
