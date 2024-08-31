@@ -1,6 +1,7 @@
 #include<iostream>
 #include<sstream>
 #include<ctime>
+#include<cctype>
 using namespace std;
 class BankAccount {
 	int accountNumber;
@@ -28,10 +29,12 @@ public:
 		this->setInterestRate(rate);
 	}
 	double getInterestRate() const { return this->interestRate; }
+	double getInterest() const;
 	void setInterestRate(double rate);
 	virtual string displayAccountInfo() override = 0;
 };
 void setAccount(int& num, string& name, double& balance, double& rate);
+void chcekName(const string& name);
 int main() {
 	try{
 		char check = 'y';
@@ -49,13 +52,25 @@ int main() {
 	}
 }
 
+void chcekName(const string& name){
+	for(auto it: name){
+		if(isalphat(name)==0)
+			throw invalid_argument("First name can only contain alphatbats");
+	}
+}
 void setAccount(int& num, string& name, double& balance, double& rate){
 	cout<<"Welcom to ### bank\n";
-	while(name.empty()){
+	string first,laset;
+	try{
 		cout<<"Please enter your first name:";
-		cin.ignore();
-		getline(cin,name);
+		cin>>first;
+		cout<<"Please enter your last name:";
+		cin>>last;
+	}catch(const invalid_argumen& e){
+		cerr<<"Exception:"<<e.what()<<endl;
 	}
+	name=first+" "+last;
+	
 	srand(time(NULL));
 	int array[16];
 	for(int i = 0; i < 16; i++){
@@ -76,6 +91,9 @@ void SavingAccount::setInterestRate(double rate) {
 		throw invalid_argument("Interest rate cannot be negative!");
 	else
 		this->interestRate = rate;
+}
+double SavingAccount::getInterest() const {
+	return this->getBalance()*this->getInterestRate();
 }
 BankAccount::BankAccount(int number, string holderName, double balance) {
 	this->setAccountNumber(number);
