@@ -22,11 +22,9 @@ void fillArray(double array[]) {
 
 void testAverage() {
 	srand(time(NULL));
-
 	for (double i = 0; i < testSize; i++) {
 		double y = rand() % testSize;
-		double ave = average(y, testSize);
-		cout << "Tester " << i + 1 << ", the average of ("<<y<<", "<<testSize<<") is: " << average << endl;
+		cout << "Tester " << i + 1 << ", the average of ("<<y<<", "<<average(y, testSize)<<") is: " << average << endl;
 		if(ave)
 	}
 }
