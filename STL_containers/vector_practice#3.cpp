@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
+#include <cstdlib>
 
 void fillVector(std::vector<int>& v, size_t size);
 void printVector(const int array[], size_t size);
