@@ -122,8 +122,8 @@ void Practice::setter(int a, int b, int c, int d)
 	}
 }
 void Practice::display() {
-	cout << "Max: " << Max << endl;
-	cout << "Min: " << Min << endl;
-	cout << "Even: " << Even << endl;
-	cout << "Odd: " << Odd << endl;
+	cout << "Max: " << this->Max << endl;
+	cout << "Min: " << this->Min << endl;
+	cout << "Even: " << this->Even << endl;
+	cout << "Odd: " << this->Odd << endl;
 }
