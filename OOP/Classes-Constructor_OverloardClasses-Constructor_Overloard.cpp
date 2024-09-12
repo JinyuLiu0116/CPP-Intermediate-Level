@@ -10,10 +10,6 @@ class Practice
 	void setter(int a, int b);
 	void setter(int a, int b, int c);
 	void setter(int a, int b, int c, int d);
-	int checkMax(int[], int);
-	int checkMin(int[], int);
-	int checkEven(int[], int);
-	int checkOdd(int[], int);
 public:
 	Practice();
 	Practice(int a);
@@ -114,58 +110,16 @@ void Practice::setter(int a, int b, int c, int d)
 {
 	int array[] = { a,b,c,d };
 	int size = sizeof(array)/ sizeof(array[0]);
-	Max = checkMax(array, size);
-	Min = checkMin(array, size);
-	Even = checkEven(array, size);
-	Odd = checkOdd(array, size);
-}
-int Practice::checkMax(int array[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (array[i] > array[i + 1])
-		{
-			return array[i];
+	for(int in=0; i<size; i++){
+		if(array[i]>array[i+1]){
+			this.Max = array[i];
+			this.Min = array[i+1];
 		}
-		return array[i + 1];
+		if(array[i]%2==0)
+			this.Even=array[i];
+		else
+			this.Odd=array[i];
 	}
-
-
-
-}
-int Practice::checkMin(int array[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (array[i] < array[i+1])
-		{
-			return array[i];
-		}
-		return array[i + 1];
-	}
-
-}
-int Practice::checkEven(int array[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (array[i] % 2 == 0)
-		{
-			return array[i];
-		}
-	}
-	return 0;
-}
-int Practice::checkOdd(int array[], int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		if (array[i] % 2 != 0)
-		{
-			return array[i];
-		}
-	}
-	return 0;
 }
 void Practice::display() {
 	cout << "Max: " << Max << endl;
