@@ -6,7 +6,6 @@ class Practice
 {
 	int Max, Min, Odd, Even;
 
-
 	void setter(int a);
 	void setter(int a, int b);
 	void setter(int a, int b, int c);
@@ -26,7 +25,7 @@ public:
 
 };
 
-void rand(int& a, int& b, int& c, int& d)
+void assignValue(int& a, int& b, int& c, int& d)
 {
 	a = rand() % 20 + 1;
 	b = rand() % 20 + 1;
@@ -37,7 +36,7 @@ int main()
 {
 	srand(time(NULL));
 	int a, b, c, d;
-	rand(a, b, c, d);
+	assignValue(a, b, c, d);
 	
 
 	Practice test1;
@@ -64,17 +63,15 @@ int main()
 
 }
 Practice::Practice() {
-	Max = 0;
-	Min = 0;
-	Odd = 0;
-	Even = 0;
+	this->Max = 0;
+	this->Min = 0;
+	this->Odd = 0;
+	this->Even = 0;
 }
 Practice::Practice(int a) {
-
 	setter(a);
 }
 Practice::Practice(int a, int b) {
-
 	setter(a, b);
 }
 Practice::Practice(int a, int b, int c) {
