@@ -9,7 +9,7 @@ class Person{
   std::string address;
 public:
   Person():name("N\A"),ID("N\A"),email("N\A"),address("N\A") {}
-  Person(std::string name, std::string id, std::string email, std::string address);
+  Person(const std::string& name, const std::string& id, const std::string& email, const std::string& address);
   std::string getName() const {return this->name;}
   std::string getID() const {return this->ID;}
   std::string getEmail() const {return this->email;}
@@ -19,18 +19,37 @@ public:
   void setEmail(const std::string& email);
   void setAddress(const std::string& address);
 };
-class Student: Person{};
-class Staff: Person{};
-class LAGCC_Student: Student{};
-class CS_Student: LAGCC_Student{};
+class Student: public Person{
+  double grade;
+public:
+  Student(): Person(), grade(0.0){}
+  Student(const std::string& name, const std::string& id, const std::string& email, const std::string& address, const double& grade)
+    :Person(name, id, email, address) { this->setGrade(grade);}
+  double getGrade() const {return this->grade;}
+  void setGrade(const double& grade);
+};
+class Staff: public Person{};
+class LAGCC_Student: public Student{};
+class CS_Student: public LAGCC_Student{};
 
 int main(){
 
 
   
 }
-Person::Person(std::string name, std::string id, std::string email, std::string address){
-  
+void Student::setGrade(const double& grade){
+  if(grade < 0)
+    throw invalid_argument("Grade cannot be negative!");
+  if(grade > 4)
+    throw invalid_argument("Grade cannot greater than 4!");
+  else
+    this->grade=grade;
+}
+Person::Person(const std::string& name, const std::string& id, const std::string& email, const std::string& address){
+  this->setName(name);
+  this->setID(id);
+  this->setEmail(email);
+  this->setAddress(address);
 }
 void Person::setName(const std::string& name){
   if(name.empty())
