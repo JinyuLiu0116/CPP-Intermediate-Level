@@ -14,7 +14,7 @@ class Grade {
 	void setData(int setGrade[]) 
 	{
 
-		for (int index = 0; index < SIZE; index++)
+		for (int index = 0; index < Grade.SIZE; index++)
 		{
 			grades[index] = setGrade[index];
 			total += grades[index];
@@ -53,6 +53,10 @@ public:
 			grades[i]=0;
 		}
 	}
+	string getFirstName() const {return this->firstName;}
+	string getLastName() const {return this->lastName;}
+	void setFirstName(const string& firstName);
+	void setLastName(const string& lastName);
 	void setName(Grade student)
 	{
 		firstName = student.firstName;
@@ -115,19 +119,14 @@ int main()
 
 		cout << "Do you want to continue?(y/n):";
 		cin >> choice;
-		while(tolower(choice)!='y'&& tolower(choice) != 'n')
-		{
+		while(tolower(choice)!='y'&& tolower(choice) != 'n'){
 			cout << "Please enter 'y' for yes and 'n' for exit.";
 			cin >> choice;
 		}
-		if (tolower(choice) == 'y')
-		{
+		if (tolower(choice) == 'y'){
 			counter++;
 			index++;
 		}
-		
 	} while (tolower(choice) != 'n');
-
-
-
 }
+
