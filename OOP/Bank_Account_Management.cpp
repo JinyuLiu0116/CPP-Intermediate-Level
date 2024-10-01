@@ -13,11 +13,11 @@ public:
 	int getAccountNumber() const { return accountNumber; }
 	string getAccountHolderName() const { return accountHolderName; }
 	double checkBAlance() const { return Balance; }
-	void setAccountNumber(int number);
-	void setAccountHolderName(string holderName);
-	void setBalance(double balance);
-	void deposit(double amount);
-	void withdraw(double amount);
+	void setAccountNumber(const int& number);
+	void setAccountHolderName(const string& holderName);
+	void setBalance(const double& balance);
+	void deposit(const double& amount);
+	void withdraw(const double& amount);
 	virtual string displayAccountInfo() = 0;
 };
 class SavingAccount:public BankAccount {
@@ -88,7 +88,7 @@ void setAccount(int& num, string& name, double& balance, double& rate){
 		cin>>rate;
 	}
 }
-void SavingAccount::setInterestRate(double rate) {
+void SavingAccount::setInterestRate(const double& rate) {
 	if (rate < 0)
 		throw invalid_argument("Interest rate cannot be negative!");
 	else
@@ -102,32 +102,32 @@ BankAccount::BankAccount(int number, string holderName, double balance) {
 	this->setAccountHolderName(holderName);
 	this->setBalance(balance);
 }
-void BankAccount::deposit(double amount){
+void BankAccount::deposit(const double& amount){
 	if(amount < 0)
 		throw invalid_argument("Cannot deposit negative number of money!");
 	else
 		this->setBalance(this->getBalance() + amount);
 }
-void BankAccount::withdraw(double amount){
+void BankAccount::withdraw(const double& amount){
 	if(amount >= 0 && this->getBalance() < amount)
 		throw invalid_argumen("You don't have enough money!");
 	else
 		this-setBalance(this->getBalance() - amount);
 	
 }
-void BankAccount::setAccountNumber(int number) {
+void BankAccount::setAccountNumber(const int& number) {
 	if (number <= 0)
 		throw invalid_argument("Account number cannot be zeor or negative!");
 	else
 		this->accountNumber = number;
 }
-void BankAccount::setAccountHolderName(string holderName) {
+void BankAccount::setAccountHolderName(const string& holderName) {
 	if (holderName.empty())
 		throw invalid_argument("Holder name cannot be empty!");
 	else
 		this->accountHolderName = holderName;
 }
-void BankAccount::setBalance(double balance) {
+void BankAccount::setBalance(const double& balance) {
 	if (balance < 0)
 		throw invalid_argument("Balance cannot be negative!");
 	else
