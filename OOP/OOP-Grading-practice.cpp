@@ -37,19 +37,21 @@ class Grade {
 	}
 	
 public:
-	Grade() firstName("Unknown"), lastName("Unknown"),total(0.0),average(0.0),letterGrade(''){
+	Grade() : firstName("Unknown"), lastName("Unknown"),total(0.0),average(0.0){
+		this->setLetterGrade(this->getAverage());
 		for(int i = 0; i < Grade.SIZE; i++){
 			subjects[i] = "Unknown";
 			grades[i]=0;
 		}
 	}
-	Grade(string firstName, string lastName)
-	{
-		this->firstName = firstName;
-		this->lastName = lastName;
-		total = 0;
-		average = 0;
-		letterGrade = 'F';
+	Grade(string firstName, string lastName) : total(0.0),average(0.0){
+		this->setFirstName(firstName);
+		this->setLastName(lastName);
+		this->setLetterGrade(this->getAverage());
+		for(int i = 0; i < Grade.SIZE; i++){
+			subjects[i] = "Unknown";
+			grades[i]=0;
+		}
 	}
 	void setName(Grade student)
 	{
