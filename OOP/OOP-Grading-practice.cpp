@@ -1,14 +1,13 @@
 #include <iostream>
 using namespace std;
-const int SIZE = 5;
-
 
 class Grade {
+	static in SIZE = 5;
 	string firstName;
 	string lastName;
-	string subjects[SIZE];
-	int grades[SIZE];
-	double total=0;
+	string subjects[Grade.SIZE];
+	int grades[Grade.SIZE];
+	double total;
 	double average;
 	char letterGrade;
 
@@ -38,8 +37,11 @@ class Grade {
 	}
 	
 public:
-	Grade() {
-
+	Grade() firstName("Unknown"), lastName("Unknown"),total(0.0),average(0.0),letterGrade(''){
+		for(int i = 0; i < Grade.SIZE; i++){
+			subjects[i] = "Unknown";
+			grades[i]=0;
+		}
 	}
 	Grade(string firstName, string lastName)
 	{
