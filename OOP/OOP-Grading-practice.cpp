@@ -129,4 +129,9 @@ int main()
 		}
 	} while (tolower(choice) != 'n');
 }
-
+string Grade::setFirstName(const string& firstName){
+	if(firstName.empty()){
+		throw 
+}
+string Grade::setLastName(const string& lastName){
+}
