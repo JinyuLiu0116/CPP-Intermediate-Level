@@ -4,8 +4,8 @@
 #include<cctype>
 using namespace std;
 class BankAccount {
-	int accountNumber;
-	string accountHolderName;
+	const int accountNumber;
+	const string accountHolderName;
 	double Balance;
 public:
 	BankAccount():accountNumber(0),accountHolderName(""),Balance(0.0){}
