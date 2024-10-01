@@ -4,12 +4,12 @@
 #include<cctype>
 using namespace std;
 class BankAccount {
-	const int accountNumber;
-	const string accountHolderName;
+	int accountNumber;//maybe string is a better type for account number
+	string accountHolderName;
 	double Balance;
 public:
 	BankAccount():accountNumber(0),accountHolderName(""),Balance(0.0){}
-	BankAccount(int number, string holderName, double balance);
+	BankAccount(const int& number, const string& holderName, const double& balance);
 	int getAccountNumber() const { return accountNumber; }
 	string getAccountHolderName() const { return accountHolderName; }
 	double checkBAlance() const { return Balance; }
@@ -24,13 +24,13 @@ class SavingAccount:public BankAccount {
 	double interestRate;
 public:
 	SavingAccount():BankAccount(), interestRate(0.0){}
-	SavingAccount(int number, string holderName, double balance, double rate)
+	SavingAccount(const int& number, const string& holderName, const double& balance, const double& rate)
 		:BankAccount(number, holderName, balance) {
 		this->setInterestRate(rate);
 	}
 	double getInterestRate() const { return this->interestRate; }
-	double getInterest() const;
-	void setInterestRate(double rate);
+	double getInterest() const {return this->getBalance()*this->getInterestRate();}
+	void setInterestRate(const double& rate);
 	virtual string displayAccountInfo() override = 0;
 };
 void setAccount(int& num, string& name, double& balance, double& rate);
@@ -94,10 +94,7 @@ void SavingAccount::setInterestRate(const double& rate) {
 	else
 		this->interestRate = rate;
 }
-double SavingAccount::getInterest() const {
-	return this->getBalance()*this->getInterestRate();
-}
-BankAccount::BankAccount(int number, string holderName, double balance) {
+BankAccount::BankAccount(const int& number, const string& holderName, const double& balance) {
 	this->setAccountNumber(number);
 	this->setAccountHolderName(holderName);
 	this->setBalance(balance);
