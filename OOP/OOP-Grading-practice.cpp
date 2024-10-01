@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cctype>
+#include <string>
 using namespace std;
 
 class Grade {
@@ -130,8 +132,20 @@ int main()
 	} while (tolower(choice) != 'n');
 }
 string Grade::setFirstName(const string& firstName){
-	if(firstName.empty()){
-		throw 
+	if(firstName.empty())
+		throw invalid_argument("Empty first name");
+	for(auto it : firstName){
+		if(!isalpha(it))
+			throw invalid_argument("Invalid input");
+	}
+	this->firstName=firstName;
 }
 string Grade::setLastName(const string& lastName){
+	if(lastName.empty())
+		throw invalid_argument("Empty first name");
+	for(auto it : lastName){
+		if(!isalpha(it))
+			throw invalid_argument("Invalid input");
+	}
+	this->lastName=lastName;
 }
