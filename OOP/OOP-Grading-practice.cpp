@@ -13,16 +13,15 @@ class Grade {
 	double average;
 	char letterGrade;
 
-	void setData(int setGrade[]) 
+	void setData(const int& grade[]) 
 	{
-
 		for (int index = 0; index < Grade.SIZE; index++)
 		{
-			grades[index] = setGrade[index];
-			total += grades[index];
+			this->grades[index] = grade[index];
+			this->total += this->grades[index];
 		}
-		average = total / SIZE;
-		setLetterGrade(average);
+		shit->average = total / SIZE;
+		setLetterGrade(this->gerAverage());
 	}
 	void setLetterGrade(double ave)
 	{
@@ -57,6 +56,8 @@ public:
 	}
 	string getFirstName() const {return this->firstName;}
 	string getLastName() const {return this->lastName;}
+	double getAverage() const {return this->average;}
+	double gerTotal() const {return this->total;}
 	void setFirstName(const string& firstName);
 	void setLastName(const string& lastName);
 	void setName(Grade student)
@@ -66,22 +67,22 @@ public:
 	}
 	void setSubAndGrade()
 	{	
-		int getGrade[SIZE];
+		int userInputGrade[SIZE];
 		for (int index = 0; index < SIZE; index++)
 		{
 			cout << index + 1 << ". Subject:";
-			cin >> subjects[index];
+			cin >> subjects[index];//not good for user assigning diracly
 			cout << "Grade(0-100): ";
-			cin >> getGrade[index];
+			cin >> userInputGrade[index];
 
-			while (getGrade[index] < 0 || getGrade[index]>100)
+			while (userInputGrade[index] < 0 || userInputGrade[index]>100)
 			{
 				cout << "Please enter grade between 0 and 100:";
-				cin >> getGrade[index];
+				cin >> userInputGrade[index];
 			}
 		}
 
-		setData(getGrade);
+		setData(userInputGrade);
 	}
 	void displayInfor()
 	{
