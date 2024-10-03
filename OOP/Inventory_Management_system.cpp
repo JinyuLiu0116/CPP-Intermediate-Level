@@ -9,12 +9,12 @@ quantity, and price. Implement the following functionality:
 */
 
 class Item {
-	int itemID;
+	string itemID;
 	string name;
 	int quantity;
 	double price;
 public:
-	Item(int id, string newName, int newQuantity, double newPrice) {
+	Item(const int& id, const string& newName, const int& newQuantity, const double& newPrice) {
 		setID(id);
 		setName(newName);
 		setQuantity(newQuantity);
