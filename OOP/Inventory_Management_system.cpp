@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cctype>
+#include <sstream>
 using namespace std;
 /*Create a simple inventory management system using classes. 
 The system should handle items with attributes like item ID, name, 
@@ -30,8 +31,7 @@ public:
 	void setName(const string);
 	void setQuantity(const int);
 	void setPrice(const double);
-	void toString();
-	
+	string toString();
 };
 class Inventory {
 	vector<Item> items;
@@ -93,11 +93,13 @@ void Item::setQuantity(const int& quantity) {
 void Item::setPrice(const double& price) {
 	this->price = price;
 }
-void Item::display() {
-	cout << "Item ID:" << itemID << endl;
-	cout << "Item name:" << name << endl;
-	cout << "Item quantity:" << quantity << endl;
-	cout << "Item price:" << price << endl;
+string Item::toStringy() {
+	stringstream ss;
+	ss <<"Item ID:" << this->getID() << endl 
+		<< "Item name:" << this->getName() << endl 
+		<< "Item quantity:" << this->getQuantity() << endl 
+		<< "Item price:" << this->getPrice() << endl;
+	return ss;
 }
 void Inventory::removeItem(int itemID) {
 	//need to study more about vector to understand the code below;
