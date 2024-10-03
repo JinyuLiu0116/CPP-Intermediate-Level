@@ -25,10 +25,10 @@ public:
 	string getName() const {return this->name;}
 	int getQuantity() const {return this->quantity;}
 	double getPrice() const {return this->price;}
-	void setID(int);
-	void setName(string);
-	void setQuantity(int);
-	void setPrice(double);
+	void setID(const int);
+	void setName(const string);
+	void setQuantity(const int);
+	void setPrice(const double);
 	void display();
 	
 };
