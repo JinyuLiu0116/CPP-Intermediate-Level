@@ -21,13 +21,13 @@ public:
 		setQuantity(newQuantity);
 		setPrice(newPrice);
 	}
-	string getID();
+	string getID() const {return this->itemID;}
+	string getName() const {return this->name;}
+	int getQuantity() const {return this->quantity;}
+	double getPrice() const {return this->price;}
 	void setID(int);
-	string getName();
 	void setName(string);
-	int getQuantity();
 	void setQuantity(int);
-	double getPrice();
 	void setPrice(double);
 	void display();
 	
