@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cctype>
 using namespace std;
 /*Create a simple inventory management system using classes. 
 The system should handle items with attributes like item ID, name, 
@@ -67,7 +68,14 @@ void Item::setID(int id) {
 	itemID = id;
 }
 
-void Item::setName(string name) {
+void Item::setName(const string name) {
+	if(name.empty()){
+		throw invalid_argument("Empty input");
+	}
+	for(string::iterator it = name.begin(); it != name.end(); it++){
+		if(!isalpha(*it))
+			throw invalid_argument("Speical character");
+	}
 	this->name = name;
 }
 
