@@ -30,7 +30,7 @@ public:
 	void setName(const string);
 	void setQuantity(const int);
 	void setPrice(const double);
-	void display();
+	void toString();
 	
 };
 class Inventory {
@@ -64,7 +64,7 @@ int main() {
 
 }
 
-void Item::setID(int id) {
+void Item::setID(const int& id) {
 	if(id<0)
 		throw invalid_argument("Negative value");
 	string itemID = to_string(id);
@@ -84,11 +84,13 @@ void Item::setName(const string name) {
 	this->name = name;
 }
 
-void Item::setQuantity(int quantity) {
+void Item::setQuantity(const int& quantity) {
+	if(quantity < 0)
+		throw invalid_argument("Negative value");
 	this->quantity = quantity;
 }
 
-void Item::setPrice(double price) {
+void Item::setPrice(const double& price) {
 	this->price = price;
 }
 void Item::display() {
