@@ -14,6 +14,7 @@ class Item {
 	int quantity;
 	double price;
 public:
+	Item(): itemID("Unknown"), name("Unknown"), quantity(0), price(0.0) {}
 	Item(const int& id, const string& newName, const int& newQuantity, const double& newPrice) {
 		setID(id);
 		setName(newName);
