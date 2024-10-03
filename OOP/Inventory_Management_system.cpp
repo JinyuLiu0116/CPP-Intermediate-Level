@@ -65,7 +65,12 @@ int main() {
 }
 
 void Item::setID(int id) {
-	itemID = id;
+	if(id<0)
+		throw invalid_argument("Negative value");
+	string itemID = to_string(id);
+	if(itemID.empty())
+		throw invalid_argument("Empty value");
+	this->itemID = itemID;
 }
 
 void Item::setName(const string name) {
