@@ -21,7 +21,7 @@ public:
 		setQuantity(newQuantity);
 		setPrice(newPrice);
 	}
-	int getID();
+	string getID();
 	void setID(int);
 	string getName();
 	void setName(string);
@@ -62,27 +62,19 @@ int main() {
 
 
 }
-int Item::getID() {
-	return itemID;
-}
+
 void Item::setID(int id) {
 	itemID = id;
 }
-string Item::getName() {
-	return name;
-}
+
 void Item::setName(string name) {
 	this->name = name;
 }
-int Item::getQuantity() {
-	return quantity;
-}
+
 void Item::setQuantity(int quantity) {
 	this->quantity = quantity;
 }
-double Item::getPrice() {
-	return price;
-}
+
 void Item::setPrice(double price) {
 	this->price = price;
 }
