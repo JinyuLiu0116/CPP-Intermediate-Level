@@ -41,7 +41,7 @@ public:
 	void addItem(Item& item) {
 		items.push_back(item);
 	}
-	void removeItem(const int& itemID);
+	void removeItem(const int& id);
 	void updateItem(int itemID, string& name, int quantity, double price);
 	void displayAllItems();
 };
@@ -68,7 +68,7 @@ int main() {
 }
 
 void Item::setID(const int& id) {
-	if(id<0)
+	if(id <= 0)
 		throw invalid_argument("Negative value");
 	string itemID = to_string(id);
 	if(itemID.empty())
@@ -88,7 +88,7 @@ void Item::setName(const string name) {
 }
 
 void Item::setQuantity(const int& quantity) {
-	if(quantity < 0)
+	if(quantity <= 0)
 		throw invalid_argument("Negative value");
 	this->quantity = quantity;
 }
@@ -104,9 +104,12 @@ string Item::toStringy() {
 		<< "Item price:" << this->getPrice() << endl;
 	return ss;
 }
-void Inventory::removeItem(int itemID) {
+void Inventory::removeItem(const int& id) {
+	if(id <= 0)
+		throw invalid_argument("None positive value");
+	string itemID = to_string(id);
 	//need to study more about vector to understand the code below;
-	auto it = remove_if(items.begin(), items.end(), [itemID](Item& item) {
+	auto it = remove_if(items.begin(), items.end(), [itemID](const Item& item) {
 		return item.getID() == itemID;
 		});
 	if (it != items.end()) {
