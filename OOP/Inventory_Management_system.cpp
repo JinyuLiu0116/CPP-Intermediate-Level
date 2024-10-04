@@ -11,10 +11,10 @@ quantity, and price. Implement the following functionality:
 */
 
 class Item {
-	const string itemID;
-	const string name;
-	const int quantity;
-	const double price;
+	string itemID;
+	string name;
+	int quantity;
+	double price;
 public:
 	Item(): itemID("Unknown"), name("Unknown"), quantity(0), price(0.0) {}
 	Item(const int& id, const string& newName, const int& newQuantity, const double& newPrice) {
