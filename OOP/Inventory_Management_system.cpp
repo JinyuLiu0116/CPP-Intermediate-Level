@@ -41,25 +41,27 @@ public:
 	void addItem(Item& item) {
 		items.push_back(item);
 	}
-	void removeItem(int itemID);
+	void removeItem(const int& itemID);
 	void updateItem(int itemID, string& name, int quantity, double price);
 	void displayAllItems();
 };
 int main() {
-	Inventory inventory;
-
-	//Adding items, I don't know why have error, but I will figure it out later.
-	inventory.addItem(Item(1, "Laptop", 10, 999.9));
-	inventory.addItem(Item(2, "Smartphone", 20, 499.99));
-	inventory.addItem(Item(3, "Tablet", 15, 299.99));
-
-	// Displaying all items
-	std::cout << "All Items:" << std::endl;
-	inventory.displayAllItems();
-
-	//remove Items
-	std::cout << "\nRemoving Item ID 3:" << std::endl;
-	inventory.removeItem(3);
+	try{
+		Inventory inventory;
+		//Adding items, I don't know why have error, but I will figure it out later.
+		inventory.addItem(Item(1, "Laptop", 10, 999.9));
+		inventory.addItem(Item(2, "Smartphone", 20, 499.99));
+		inventory.addItem(Item(3, "Tablet", 15, 299.99));
+		// Displaying all items
+		std::cout << "All Items:" << std::endl;
+		inventory.displayAllItems();
+		//remove Items
+		std::cout << "\nRemoving Item ID 3:" << std::endl;
+		inventory.removeItem(3);
+	}catch(const invalid_argument& e)
+		cerr << "Exception: " << e.what() << endl;
+	catch(const exception& e)
+		cerr << "Exception: " << e.what() << endl;
 
 
 
