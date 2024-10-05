@@ -44,11 +44,11 @@ public:
 			grades[i]=0;
 		}
 	}
-	Grade(string firstName, string lastName) : total(0.0),average(0.0){
+	Grade(const std::string& firstName, const std::string& lastName) : total(0.0),average(0.0){
 		this->setFirstName(firstName);
 		this->setLastName(lastName);
 		this->setLetterGrade(this->getAverage());
-		for(int i = 0; i < Grade.SIZE; i++){
+		for(int i = 0; i < Grade::SIZE; i++){
 			subjects[i] = "Unknown";
 			grades[i]=0;
 		}
