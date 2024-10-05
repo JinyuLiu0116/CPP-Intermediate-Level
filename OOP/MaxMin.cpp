@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+
 
 class MaxMin {
 	int Max, Min;
@@ -18,15 +18,15 @@ int main() {
 	MaxMin mm1;
 	mm1.setMax(15);
 	mm1.setMin(21);
-	cout << "mm1:";
+	std::cout << "mm1:" << std::endl;
 	mm1.display();
 
 	MaxMin mm2(mm1);
-	cout << "mm2:";
+	std::cout << "mm2:" << std::endl;
 	mm2.display();
 
 	MaxMin mm3(mm2.getMax() - 10, mm1.getMin() + 20);
-	cout << "mm3:";
+	std::cout << "mm3:" << std::endl;
 	mm3.display();
 	
 
