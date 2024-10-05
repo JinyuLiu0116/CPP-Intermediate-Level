@@ -1,29 +1,28 @@
 #include <iostream>
 #include <cctype>
 #include <string>
-using namespace std;
 
 class Grade {
-	static in SIZE = 5;
-	string firstName;
-	string lastName;
-	string subjects[Grade.SIZE];
-	int grades[Grade.SIZE];
+	static int SIZE = 5;
+	std::string firstName;
+	std::string lastName;
+	std::string subjects[Grade::SIZE];
+	int grades[Grade::SIZE];
 	double total;
 	double average;
 	char letterGrade;
 
 	void setData(const int& grade[]) 
 	{
-		for (int index = 0; index < Grade.SIZE; index++)
+		for (int index = 0; index < Grade::SIZE; index++)
 		{
 			this->grades[index] = grade[index];
 			this->total += this->grades[index];
 		}
-		shit->average = total / SIZE;
+		this->average = total / SIZE;
 		setLetterGrade(this->gerAverage());
 	}
-	void setLetterGrade(double ave)
+	void setLetterGrade(const double& ave)
 	{
 		if (ave > 90)
 			letterGrade = 'A';
