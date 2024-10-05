@@ -8,11 +8,11 @@ public:
 	MaxMin(const int& a) : Max(a),Min(a){}
 	MaxMin(const int& a, const int& b);
 	MaxMin(const MaxMin& mm) { this->setMax(mm.Max); this->setMin(mm.Min); }
-	int getMax() { return this->Max; }
-	int getMin() { return this->Min; }
-	void setMax(int max);
-	void setMin(int min);
-	void display() { cout << "Max: " << this->getMax() << ", Min: " << this->getMin() << endl; }
+	int getMax() const { return this->Max; }
+	int getMin() const { return this->Min; }
+	void setMax(const int& max);
+	void setMin(const int& min);
+	void display() { std::cout << "Max: " << this->getMax() << ", Min: " << this->getMin() << std::endl; }
 };
 int main() {
 	MaxMin mm1;
