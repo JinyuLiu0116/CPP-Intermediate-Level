@@ -53,31 +53,31 @@ public:
 			grades[i]=0;
 		}
 	}
-	string getFirstName() const {return this->firstName;}
-	string getLastName() const {return this->lastName;}
+	std::string getFirstName() const {return this->firstName;}
+	std::string getLastName() const {return this->lastName;}
 	double getAverage() const {return this->average;}
 	double gerTotal() const {return this->total;}
-	void setFirstName(const string& firstName);
-	void setLastName(const string& lastName);
-	void setName(Grade student)
+	void setFirstName(const std::string& firstName);
+	void setLastName(const std::string& lastName);
+	void setName(const Grade& student)
 	{
 		firstName = student.firstName;
 		lastName = student.lastName;
 	}
 	void setSubAndGrade()
 	{	
-		int userInputGrade[SIZE];
-		for (int index = 0; index < SIZE; index++)
+		int userInputGrade[Grade::SIZE];
+		for (int index = 0; index < Grade::SIZE; index++)
 		{
-			cout << index + 1 << ". Subject:";
-			cin >> subjects[index];//not good for user assigning diracly
-			cout << "Grade(0-100): ";
-			cin >> userInputGrade[index];
+			std:;cout << index + 1 << ". Subject:";
+			std:;cin >> subjects[index];//not good for user assigning diracly
+			std::cout << "Grade(0-100): ";
+			std::cin >> userInputGrade[index];
 
 			while (userInputGrade[index] < 0 || userInputGrade[index]>100)
 			{
-				cout << "Please enter grade between 0 and 100:";
-				cin >> userInputGrade[index];
+				std::cout << "Please enter grade between 0 and 100:";
+				std::cin >> userInputGrade[index];
 			}
 		}
 
