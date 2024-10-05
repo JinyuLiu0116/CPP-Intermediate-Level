@@ -96,42 +96,44 @@ public:
 };
 int main()
 {
-	int counter = 1;
+	try{
+		int counter = 1;
 	//use dynamic object array dosen't work :)
-	Grade* student = new Grade[counter];
-	int index = 0;
-	char choice;
+		Grade* student = new Grade[counter];
+		int index = 0;
+		char choice;
 
-	do {
-		std::string firstN, lastN;
+		do {
+			std::string firstN, lastN;
 
-		cout << "Enter your first name and last name:";
-		cin >> firstN >> lastN;
-
-
-		Grade object(firstN, lastN);
-		student[index].setName(object);
-
-		cout << "Enter the subjects and the grade for each subject:\n";
-		student[index].setSubAndGrade();
+			std::cout << "Enter your first name and last name:";
+			std::cin >> firstN >> lastN;
 
 
-		cout << '\n' << "******************************" << '\n';
-		student[index].displayInfor();
+			Grade object(firstN, lastN);
+			student[index].setName(object);
 
-		cout << "Do you want to continue?(y/n):";
-		cin >> choice;
-		while(tolower(choice)!='y'&& tolower(choice) != 'n'){
-			cout << "Please enter 'y' for yes and 'n' for exit.";
-			cin >> choice;
-		}
-		if (tolower(choice) == 'y'){
-			counter++;
-			index++;
-		}
-	} while (tolower(choice) != 'n');
+			std::cout << "Enter the subjects and the grade for each subject:\n";
+			student[index].setSubAndGrade();
+
+
+			std::cout << '\n' << "******************************" << '\n';
+			student[index].displayInfor();
+
+			std::cout << "Do you want to continue?(y/n):";
+			std::cin >> choice;
+			while(tolower(choice)!='y'&& tolower(choice) != 'n'){
+				std::cout << "Please enter 'y' for yes and 'n' for exit.";
+				std::cin >> choice;
+			}
+			if (tolower(choice) == 'y'){
+				counter++;
+				index++;
+			}
+		} while (tolower(choice) != 'n');
+	}
 }
-string Grade::setFirstName(const string& firstName){
+std::string Grade::setFirstName(const std::string& firstName){
 	if(firstName.empty())
 		throw invalid_argument("Empty first name");
 	for(auto it : firstName){
@@ -140,7 +142,7 @@ string Grade::setFirstName(const string& firstName){
 	}
 	this->firstName=firstName;
 }
-string Grade::setLastName(const string& lastName){
+std::string Grade::setLastName(const std::string& lastName){
 	if(lastName.empty())
 		throw invalid_argument("Empty first name");
 	for(auto it : lastName){
