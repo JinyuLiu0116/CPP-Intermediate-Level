@@ -85,10 +85,10 @@ public:
 	}
 	void displayInfor()
 	{
-		cout << "Student name:" << firstName << " " << lastName << endl;
-		cout << "Total score: " << total << endl;
-		cout << "Average score:" << average << endl;
-		cout << "Letter grade:" << letterGrade << endl;
+		std::cout << "Student name:" << firstName << " " << lastName << std::endl;
+		std::cout << "Total score: " << total << std::endl;
+		std::cout << "Average score:" << average << std::endl;
+		std::cout << "Letter grade:" << letterGrade << std::endl;
 	}
 
 
@@ -103,7 +103,7 @@ int main()
 	char choice;
 
 	do {
-		string firstN, lastN;
+		std::string firstN, lastN;
 
 		cout << "Enter your first name and last name:";
 		cin >> firstN >> lastN;
