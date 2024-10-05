@@ -5,8 +5,8 @@ class MaxMin {
 	int Max, Min;
 public:
 	MaxMin() : Max(0),Min(0){}
-	MaxMin(int a) : Max(a),Min(a){}
-	MaxMin(int a, int b);
+	MaxMin(const int& a) : Max(a),Min(a){}
+	MaxMin(const int& a, const int& b);
 	MaxMin(const MaxMin& mm) { this->setMax(mm.Max); this->setMin(mm.Min); }
 	int getMax() { return this->Max; }
 	int getMin() { return this->Min; }
