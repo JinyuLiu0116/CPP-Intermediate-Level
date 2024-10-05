@@ -31,7 +31,7 @@ int main() {
 	
 
 }
-MaxMin::MaxMin(int a, int b) {
+MaxMin::MaxMin(const int& a, const int& b) {
 	if (a >= b) {
 		this->setMax(a);
 		this->setMin(b);
@@ -41,7 +41,7 @@ MaxMin::MaxMin(int a, int b) {
 		this->setMin(a);
 	}
 }
-void MaxMin::setMax(int max) {
+void MaxMin::setMax(const int& max) {
 	if (max < this->getMin()) {
 		this->Max = this->Min;
 		this->Min = max;
@@ -50,7 +50,7 @@ void MaxMin::setMax(int max) {
 		this->Max = max;
 	}
 }
-void MaxMin::setMin(int min) {
+void MaxMin::setMin(const int& min) {
 	if (min > this->getMax()) {
 		this->Min = this->Max;
 		this->Max = min;
