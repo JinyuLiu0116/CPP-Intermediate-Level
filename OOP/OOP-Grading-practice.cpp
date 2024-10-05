@@ -35,7 +35,6 @@ class Grade {
 		else
 			letterGrade = 'F';
 	}
-	
 public:
 	Grade() : firstName("Unknown"), lastName("Unknown"),total(0.0),average(0.0){
 		this->setLetterGrade(this->getAverage());
@@ -131,7 +130,10 @@ int main()
 				index++;
 			}
 		} while (tolower(choice) != 'n');
-	}
+	}catch(const invalid_argument& e)
+		std::cerr << "Exception: " << e.what() << std::endl;
+	catch(const exception& e)
+		std::cerr << "Exception: " << e.what() << std::endl;
 }
 std::string Grade::setFirstName(const std::string& firstName){
 	if(firstName.empty())
