@@ -23,7 +23,7 @@ int main() {
 	int triangleNum = triangleNumber(num, sum);
 	std::cout<<"The triangle number of "<< num <<" is: "<< triangelNum << std::endl;
 }
-void getDivisors(int num) {
+void getDivisors(const int& num) {
 	for (int i = 2; i <= num; i++) {
 		if (num % i == 0) {
 			std::cout << i << " ";
@@ -32,7 +32,7 @@ void getDivisors(int num) {
 		}
 	}
 }
-int triangleNumber(int num, int sum){
+int triangleNumber(const int& num, const int& sum){
 	sum+=num;
 	if(num != 0)
 		triangleNumber(num-1, sum);
