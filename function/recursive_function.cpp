@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
 
-void getDivisors(int num);
-int triangleNumber(int num, int sum);
+void getDivisors(const int& num);
+int triangleNumber(const int& num, const int& sum);
 int main() {
 	int number = 0;
 	std::cout << "Please enter a number and press Enter:";
