@@ -24,7 +24,7 @@ class Student: public Person{
 public:
   Student(): Person(), grade(0.0){}
   Student(const std::string& name, const std::string& id, const std::string& email, const std::string& address, const double& grade)
-    :Person(name, id, email, address) { this->setGrade(grade);}
+    :Person(name, id, email, address) { setGrade(grade);}
   double getGrade() const {return this->grade;}
   void setGrade(const double& grade);
 };
@@ -33,6 +33,9 @@ class Staff: public Person{
 public:
   Staff():Person(), jobTitle("staff"){}
   Staff(const std::string& name, const std::string& id, const std::string& email, const std::string& address, const std::string& jobTitle)
+    :Person(name, id, email, address) {setJobTitle(jobTitle);}
+  std::string getJobTitle() const {return this->jobTitle;}
+  void setJobTitle(const std::string& jobTitle);
 };
 class LAGCC_Student: public Student{};
 class CS_Student: public LAGCC_Student{};
