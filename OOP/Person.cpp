@@ -28,7 +28,12 @@ public:
   double getGrade() const {return this->grade;}
   void setGrade(const double& grade);
 };
-class Staff: public Person{};
+class Staff: public Person{
+  std::string jobTitle;
+public:
+  Staff():Person(), jobTitle("staff"){}
+  Staff(const std::string& name, const std::string& id, const std::string& email, const std::string& address, const std::string& jobTitle)
+};
 class LAGCC_Student: public Student{};
 class CS_Student: public LAGCC_Student{};
 
