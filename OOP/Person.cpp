@@ -45,6 +45,15 @@ int main(){
 
   
 }
+void Student::setJobTitle(const std::string& jobTitle){
+  if(jobTitle.empty())
+    throw invalid_argument("Empty input");
+  for(char it:jobTitle){
+    if(!isalpha(it))
+      throw invalid_argument("Invalid input charactor");
+  }
+  this->jobTitle = jobTitle;
+}
 void Student::setGrade(const double& grade){
   if(grade < 0)
     throw invalid_argument("Grade cannot be negative!");
