@@ -16,8 +16,8 @@ public:
 	string getCompany();
 	int getTenure();
 	void setName(const string& name);
-	void setCompany(string company);
-	void setTenure(int tenure);
+	void setCompany(const string& company);
+	void setTenure(const int& tenure);
 	void AskForPromotion();
 
 	void dalyWork();
