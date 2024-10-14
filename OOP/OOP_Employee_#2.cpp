@@ -26,7 +26,7 @@ public:
 class Developer : public Employee {
 	string favProgrammingLanguage;
 public:
-	Developer(string Name, string Company, int Tenure, string fProLanguage)
+	Developer(const string& Name, string Company, int Tenure, string fProLanguage)
 		:Employee(Name, Company, Tenure) {
 		favProgrammingLanguage = fProLanguage;
 	}
