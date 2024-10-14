@@ -53,13 +53,13 @@ int main()
 
 
 }
-void Employee::setName(string name) {
+void Employee::setName(const string& name) {
 	this->name = name;
 }
-void Employee::setCompany(string company) {
+void Employee::setCompany(const string& company) {
 	this->company = company;
 }
-void Employee::setTenure(int tenure) {
+void Employee::setTenure(const int& tenure) {
 	this->tenure = tenure;
 }
 
