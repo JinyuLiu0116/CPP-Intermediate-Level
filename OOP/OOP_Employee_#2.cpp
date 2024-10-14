@@ -10,7 +10,7 @@ class Employee : AbstractEmployee {
 	string company;
 	int tenure;
 public:
-	Employee(string Name, string Company, int Tenure);
+	Employee(const string& Name, const string& Company, const int& Tenure);
 	void introduce();
 	string getName();
 	string getCompany();
