@@ -6,8 +6,8 @@ int main() {
   int num = 0;
 
   while (true) {
-    cout << "Enter number (0 = exit) and press Enter: ";
-    cin >> num;
+    std::cout << "Enter number (0 = exit) and press Enter: ";
+    std::cin >> num;
     if (num == 0)
       break;
     if (checkPrime(num))
