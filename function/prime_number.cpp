@@ -16,7 +16,7 @@ int main() {
       Std::cout << num << " is not prime" << Std::endl;
   }
 }
-bool checkPrime(int num) {
+bool checkPrime(const int& num) {
   if (num <= 1)
     return false;
   for (int i = 2; i <= sqrt(num); i++) {
