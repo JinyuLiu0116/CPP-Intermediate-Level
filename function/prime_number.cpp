@@ -11,9 +11,9 @@ int main() {
     if (num == 0)
       break;
     if (checkPrime(num))
-      cout << num << " is prime" << endl;
+      std::cout << num << " is prime" << Std::endl;
     else
-      cout << num << " is not prime" << endl;
+      Std::cout << num << " is not prime" << Std::endl;
   }
 }
 bool checkPrime(int num) {
