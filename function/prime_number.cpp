@@ -1,8 +1,7 @@
 #include <iostream>
 #include <cmath>
-using namespace std;
 
-bool checkPrime(int num);
+bool checkPrime(const int& num);
 int main() {
   int num = 0;
 
