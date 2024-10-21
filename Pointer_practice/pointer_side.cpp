@@ -25,9 +25,9 @@ int main(){
   std::cout << "sizeof(another_number4):" << sizeof(another_number4) << std::endl; // 4
   std::cout << "sizeof(p_number5):" << sizeof(p_number5) << std::endl; // 8
   std::cout << "sizeof(another_number5):" << sizeof(another_number5) << std::endl; // 4
-  //without confusion (regiment):
+  //without confusion (recommended):
   int* p_number6{};
   int* another_number6{};
-  // or (not regiment but works):
+  // or (not recommended but works):
   int *p_number7{}, *another_number7{};
 }
