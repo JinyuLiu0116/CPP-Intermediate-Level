@@ -11,6 +11,10 @@ int main(){
 
   std::string str2("Hellow String!");
   std::string str2Copy(str2);
-  
+  cout << "str2Copy is: " << str2Copy << endl;
+
+  //Initialize a string to the first 5 characters of another
+  std::string strPartialCopy(constCStyleString, 5);
+  cout << "strPartialCopy is: " << strPartialCopy << endl;
   
 }
