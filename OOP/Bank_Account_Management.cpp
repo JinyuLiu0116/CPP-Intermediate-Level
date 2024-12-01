@@ -15,6 +15,7 @@ public:
 	double checkBAlance() const { return Balance; }
 	void setAccountNumber(const int& number);
 	void setAccountHolderName(const string& holderName);
+	double getBalance() const {return this->Balance;}
 	void setBalance(const double& balance);
 	void deposit(const double& amount);
 	void withdraw(const double& amount);
