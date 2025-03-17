@@ -12,7 +12,7 @@ int main()
 	cin >> colum;
 
 	
-	int** ptopTable = new int*[row];// int*[] declear that we not just creat a dynamic array but array of pointer.
+	int** ptopTable = new int*[row];
 	for (int index = 0; index < row; index++)
 	{	//assign the address of dynamic arrays with colum number of elements to pointer
 		ptopTable[index] = new int[colum];//array is address of its first index member, so it can directly signt to pointer
