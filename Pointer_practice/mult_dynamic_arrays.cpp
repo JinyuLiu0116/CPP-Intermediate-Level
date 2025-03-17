@@ -11,7 +11,7 @@ int main()
 	cout << "Enter the number of colum:";
 	cin >> colum;
 
-	//creat a pointer to a pointer has row many elements.
+	
 	int** ptopTable = new int*[row];// int*[] declear that we not just creat a dynamic array but array of pointer.
 	for (int index = 0; index < row; index++)
 	{	//assign the address of dynamic arrays with colum number of elements to pointer
