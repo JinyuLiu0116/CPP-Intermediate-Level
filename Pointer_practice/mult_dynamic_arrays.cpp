@@ -19,7 +19,7 @@ int main()
 	}
 	//assign a value to row 1, colum 2
 	ptopTable[1][2] = 88;
-	//use nest loop and rand function to sign values to fillfull ptopTable
+	
 	for (int rows = 0; rows < row; rows++)
 	{
 		for (int cols = 0; cols < colum; cols++)
